@@ -17,6 +17,8 @@ public class Client {
 	private String password;
 	@Column(name="PHONENUMBER",nullable=false,unique=true)
 	private String phoneNumber;
+	
+	
 
 	public String getUserName() {
 		return userName;
