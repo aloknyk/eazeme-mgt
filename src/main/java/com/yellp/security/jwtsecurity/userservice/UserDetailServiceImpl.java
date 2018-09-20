@@ -7,10 +7,12 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 
 import com.yellp.dao.UserRepository;
 import com.yellp.entity.ApplicationUser;
 
+@Component
 public class UserDetailServiceImpl implements UserDetailsService {
 
 	@Autowired
