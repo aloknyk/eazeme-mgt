@@ -1,4 +1,4 @@
-package com.yellp.security;
+package com.yellp.security.jwtsecurity.constants;
 
 public class SecurityConstants {
 	public static final String SECRET = "SecretKeyToGenJWTs";

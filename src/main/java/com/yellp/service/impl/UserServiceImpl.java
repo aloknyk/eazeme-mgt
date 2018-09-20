@@ -4,23 +4,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.yellp.dao.ClientRepository;
-import com.yellp.entity.Client;
-import com.yellp.service.ClientService;
+import com.yellp.dao.UserRepository;
+import com.yellp.entity.ApplicationUser;
+import com.yellp.service.UserService;
 
 @Component
-public class ClientServiceImpl implements ClientService {
+public class UserServiceImpl implements UserService {
 
 	@Autowired
-	private ClientRepository clientRepository;
+	private UserRepository userRepository;
 
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 
 	@Override
-	public void registerClient(Client client) {
+	public void registerClient(ApplicationUser client) {
 		client.setPassword(passwordEncoder.encode(client.getPassword()));
-		clientRepository.save(client);
+		userRepository.save(client);
 	}
 
 }
