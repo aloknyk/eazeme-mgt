@@ -10,7 +10,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -24,8 +23,11 @@ import com.yellp.security.jwtsecurity.constants.SecurityConstants;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-	@Autowired
 	private AuthenticationManager authenticationManager;
+
+    public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
 
 	/*
 	 * parse the credentials and pass it to the authentication manager for

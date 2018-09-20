@@ -12,11 +12,11 @@ import com.yellp.service.UserService;
 public class UserController {
 
 	@Autowired
-	private UserService clientService;
+	private UserService userservice;
 
 	@PostMapping("/register")
-	public String register(@RequestBody ApplicationUser client) {
-		clientService.registerClient(client);
+	public String register(@RequestBody ApplicationUser user) {
+		userservice.registerClient(user);
 		return "You have successfully registered";
 	}
 
